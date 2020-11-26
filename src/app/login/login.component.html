@@ -1,34 +1,49 @@
-<form (ngSubmit)="login()" #myForm="ngForm"> 
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+            <div class="card card-signin my-5">
+                <div class="card-body">
+                    <h5 class="card-title text-center">Sign In</h5>
+                    <!--#LoginForm(表單名字) ="ngForm" (指令) -->
+                    <form (ngSubmit)="login()" #LoginForm="ngForm">
+
+                        <!--欄位標籤 -->
+                        <div class="form-label-group">
+                            <!--label提示字-->
+                            <label class="form-label">帳號</label>
+                            <!--雙向繫節 -> [()]  -->
+                            <!--input type是調整輸入框的文字屬性-->
+                            <input type="text" [(ngModel)]="account" name="account" class="form-control">
+                        </div>
 
 
-    <!--欄位標籤 -->
-    <div class="form-group">   
+                        <!--欄位標籤 -->
+                        <div class="form-label-group">
+                            <label class="form-label">密碼</label>
+                            <!--雙向繫節 -> [()]  -->
+                            <!--input type是調整輸入框的文字屬性-->
+                            <!--name是input的名字，用來查詢這個欄位的規則用 ; ngModel是綁定的屬性-->
+                            <input type="password" [(ngModel)]="password" name="password" class="form-control">
+                        </div>
 
-        <!--label提示字-->
-      <label class="form-label">帳號</label> 
+                        <div class="custom-control custom-checkbox mb-3">
+                            <input type="checkbox" class="custom-control-input" id="customCheck1">
+                            <label class="custom-control-label" for="customCheck1">記住密碼</label>
+                        </div>
 
-        <!--雙向繫節 -> [()]  -->
-        <!--input type是調整輸入框的文字屬性-->
-      <input type="text" [(ngModel)]="account"  name="account" class="form-control">
-    
+                        <!-- 送出按鈕 -->
+                        <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">登入</button>
+
+                        <hr class="my-4">
+                        <button class="btn btn-lg btn-google btn-block text-uppercase" type="submit"><i
+                                class="fab fa-google mr-2"></i> Sign in with Google</button>
+                        <button class="btn btn-lg btn-facebook btn-block text-uppercase" type="submit"><i
+                                class="fab fa-facebook-f mr-2"></i> Sign in with Facebook</button>
+
+                    </form>
+
+                </div>
+            </div>
+        </div>
     </div>
-    
-
-     <!--欄位標籤 -->
-    <div class="form-group">  
-
-      <label class="form-label">密碼</label>
-
-        <!--雙向繫節 -> [()]  -->
-        <!--input type是調整輸入框的文字屬性-->
-      <!--name是input的名字，用來查詢這個欄位的規則用 ; ngModel是綁定的屬性-->
-      <input type="password" [(ngModel)]="password"  name="password" class="form-control">
-    
-    </div>  
-
-    
-      <!-- 送出按鈕 --> 
-      <button class="btn btn-primary" type="submit">登入</button> 
-
-
-    </form>
+</div>
