@@ -20,18 +20,20 @@ export class LoginComponent implements OnInit {
 
   // tslint:disable-next-line: typedef
   login() {
+    // 使用Router服務
+    this.router.navigate(['/dashboard', {a: this.account}] );
     // 在console.log 查看並驗證你打的東西是甚麼
-    console.log('輸入的"帳號"資料是:', this.account);
-    console.log('輸入的"密碼"資料是:', this.password);
+    // console.log('輸入的"帳號"資料是:', this.account);
+    // console.log('輸入的"密碼"資料是:', this.password);
 
     // 檢驗方法
-    // === 等於相等 && 等於相等
-    if (this.account === 'abc' && this.password === '123') {
-      this.router.navigateByUrl('/dashboard');
-    } else {
-      // 本業面的彈跳提視窗
-      alert('帳號密碼錯誤');
-    }
+    // // === 等於相等 && 等於相等
+    // if (this.account === 'abc' && this.password === '123') {
+    //   this.router.navigateByUrl('/dashboard');
+    // } else {
+    //   // 本業面的彈跳提視窗
+    //   alert('帳號密碼錯誤');
+    // }
   }
 
 }

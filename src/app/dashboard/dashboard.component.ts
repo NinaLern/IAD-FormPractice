@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardComponent implements OnInit {
 
-  constructor() { }
+  @Input() a: string | undefined;
+  account = '';
+
+  constructor(private route: ActivatedRoute) { }
 
   ngOnInit(): void {
+    // 保險預防當輸入的是空的
+    this.account = '' + this.route.snapshot.paramMap.get('a');
   }
-
 }
