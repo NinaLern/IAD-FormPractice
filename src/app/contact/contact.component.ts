@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { DataService } from '../service_D/data.service';
 
 @Component({
   selector: 'app-contact',
@@ -13,13 +15,14 @@ export class ContactComponent implements OnInit {
     status: ''
   };
 
-  constructor() { }
+  constructor(private ds: DataService, private rs: Router) { }
 
   ngOnInit(): void {
   }
 
   onSubmit() {
-    console.log(this.contact);
+    this.ds.addContact(this.contact);
+    this.rs.navigate(['/dashboard']);
 
   }
 }

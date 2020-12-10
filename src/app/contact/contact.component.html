@@ -3,7 +3,8 @@
         <div class="card-body">
             <h4 class="card-title">聯絡人表單</h4>
             <!--處理按鈕送出的事件，綁定的寫法。-->
-            <form  #ngForm="ngForm" (ngSubmit)="onSubmit()">
+            <form #ngForm="ngForm" (ngSubmit)="onSubmit()">
+
                 <div class="form-group">
                     <label for="">
                         聯絡人
@@ -14,6 +15,7 @@
                         輸入姓名
                     </small>
                 </div>
+
                 <div class="form-group">
                     <label for="">
                         連絡電話
@@ -25,9 +27,16 @@
                     </small>
                 </div>
 
-                <button type="submit" class="btn btn-primary">
-                    新增
-                </button>
+                <select class="form-control" [(ngModel)]="contact.status" name="status" id="">
+                    <option>商機</option>
+                    <option>機會</option>
+                    <option>客戶</option>
+                    <option>歸檔</option>
+                </select>
+
+                    <button type="submit" class="btn btn-primary">
+                        新增
+                    </button>
             </form>
         </div>
     </div>

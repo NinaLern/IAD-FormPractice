@@ -1,3 +1,20 @@
-<p>
-    歡迎, {{ account }}
-</p>
+<div class="container">
+    <button class="btn" [routerLink]="['/contact']">新增聯絡人</button>
+    <button class="btn btn-danger" [routerLink]="['/login']">登出</button>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>姓名</th>
+                <th>電話</th>
+                <th>商機</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let cc of contacts">
+                <td scope="row">{{ cc.account }}</td>
+                <td>{{ cc.phone }}</td>
+                <td>{{ cc.status }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
